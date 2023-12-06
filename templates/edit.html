@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    لوحة التحرير
+{% endblock %}
+
+{% block body %}
+<div class="container w-25 my-3">
+    <div class="mb-3">
+        <h4>تحرير</h4>
+    </div>
+    <form action="{% url 'edit-confirm' student.id %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">اسم الطالب</label>
+            <input type="text" class="form-control" name="sname" value='{{student.name}}'>
+        </div>
+        <div class="mb-3">
+            <label for="roll-no" class="form-label">رقم اللفة</label>
+            <input type="text" class="form-control" name="roll-no" value='{{student.roll_no}}'>
+        </div>
+        <div class="mb-3">
+            <label for="محاسبة" class="form-label">محاسبة</label>
+            <input type="text" class="form-control" name="محاسبه_اداريه" value='{{student.محاسبه_اداريه}}'>
+        </div>
+        <div class="mb-3">
+            <label for="دعم_اتخاذ_القرار" class="form-label">دعم اتخاذ القرار</label>
+            <input type="text" class="form-control" name="decision_support" value='{{student.decision_support}}'>
+        </div>
+        <div class="mb-3">
+            <label for="أمن_المعلومات" class="form-label">أمن المعلومات</label>
+            <input type="text" class="form-control" name="information_security" value='{{student.information_security}}'>
+        </div>
+        <div class="mb-3">
+            <label for="محاسبة_إنجليزية" class="form-label">محاسبة إنجليزية</label>
+            <input type="text" class="form-control" name="english_accounting" value='{{student.english_accounting}}'>
+        </div>
+
+        <input type="submit" class="form-control btn btn-success" value="تحرير">
+
+    </form>
+</div>
+{% endblock %}

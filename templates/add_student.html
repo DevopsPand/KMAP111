@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    إضافة طالب
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>إضافة طالب</h3>
+    <form action="{% url 'add_confirm' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">اسم الطالب</label>
+            <input type="text" class="form-control" name="sname">
+        </div>
+        <div class="mb-3">
+            <label for="roll-no" class="form-label">رقم اللفة</label>
+            <input type="text" class="form-control" name="roll-no" >
+        </div>
+        <div class="mb-3">
+            <label for="accounting" class="form-label">المحاسبة</label>
+            <input type="number" class="form-control" name="accounting">
+        </div>
+        <div class="mb-3">
+            <label for="decision_support" class="form-label">دعم اتخاذ القرار</label>
+            <input type="number" class="form-control" name="decision_support">
+        </div>
+        <div class="mb-3">
+            <label for="information_security" class="form-label">أمن المعلومات</label>
+            <input type="number" class="form-control" name="information_security">
+        </div>
+        <div class="mb-3">
+            <label for="english_accounting" class="form-label">محاسبة اللغة الإنجليزية</label>
+            <input type="number" class="form-control" name="english_accounting">
+        </div>
+        <div class="mb-3">
+            <label for="personnel_management" class="form-label">إدارة الأفراد</label>
+            <input type="number" class="form-control" name="personnel_management">
+        </div>
+        <input type="submit" class="form-control btn btn-success" value="إضافة">
+    </form>
+</div>
+{% endblock %}

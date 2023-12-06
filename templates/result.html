@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    النتيجة
+{% endblock %}
+
+{% block body %}
+<table class="table my-4">
+    <thead>
+        <tr>
+            <th scope="col">رقم اللفة</th>
+            <th scope="col">الاسم</th>
+            <th scope="col">محاسبة إدارية</th>
+            <th scope="col">دعم اتخاذ القرار</th>
+            <th scope="col">أمن المعلومات</th>
+            <th scope="col">محاسبة بالإنجليزية</th>
+            <th scope="col">إدارة الأفراد</th>
+            <th scope="col">إجمالي الدرجات</th>
+            <th scope="col">النسبة المئوية</th>
+            <th scope="col">الحالة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{ roll_no }}</th>
+            <td>{{ name }}</td>
+            <td>{{ accounting }}</td>
+            <td>{{ decision_support }}</td>
+            <td>{{ information_security }}</td>
+            <td>{{ english_accounting }}</td>
+            <td>{{ personnel_management }}</td>
+            <td>{{ total }}</td>
+            <td>{{ percent }}</td>
+            {% if status == 'Pass' %}
+                <td><p class="btn btn-success">{{ status }}</p></td>
+            {% else %}
+                <td><p class="btn btn-danger">{{ status }}</p></td>
+            {% endif %}
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

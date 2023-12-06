@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Home   
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <form action="{% url 'result' %}" method="post">
+        {% csrf_token %}
+    <div class="mb-3 my-5">
+        <label for="roll_no" class="form-label">Roll Number</label>
+        <input type="text" class="form-control" name="roll_no" id="roll_no">
+    </div>
+    <div class="mb-3">
+        <input type="submit" value="See Result" class="btn btn-success"/>
+    </div>
+    </form>
+</div>
+{% endblock %}
